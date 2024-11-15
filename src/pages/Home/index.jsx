@@ -8,7 +8,7 @@ import {useItems} from "../../component/useItem/index"
 
 const Home =()=> {
     let { category} = useParams();
-  const {filterItems, setfilterCategory} = useContext(ShopingCardContext)
+  const {filterItems, setfilterCategory } = useContext(ShopingCardContext)
    const {items}= useItems()
     setfilterCategory(category)
 
@@ -20,10 +20,11 @@ const Home =()=> {
    return (
    
      <section >
+      {/* {isListCategories} */}
        <div>
           <h2 className="font-bold text-center mt-8 mb-5 text-lg md:text-2xl"> Exclusive Products </h2>
        </div> 
-       <div className=" max-w-screen-lg grid gap-3 place-items-center  grid-cols-2 sm:grid-cols-3 lg:grid-cols-4" >
+       <div className=" p-2 max-w-screen-lg grid gap-3 place-items-center   grid-cols-2 sm:grid-cols-3 lg:grid-cols-4" >
          {renderView}
        </div>
       </section>

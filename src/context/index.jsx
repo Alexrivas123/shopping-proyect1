@@ -22,6 +22,7 @@ const ShopingCardContext= createContext()
   return items?.filter(item => item.title.toLowerCase().includes(searchTitle.toLowerCase()))
   } 
  /** filtr by category */
+ const [isListCategories, setIsListCategories]= React.useState(false)
  const [filterCategory,setfilterCategory ] = React.useState(null)
  const filterItemsByCategory =(items, category)=>{
   return items?.filter(item => item.category.name.includes(category))
@@ -55,6 +56,8 @@ const [ addOrdersProduct, setAddOrdersProduct] = React.useState([])
 /**     show orders /  status orders            **/
 const [ ordersProduct, setOrdersProduct] = React.useState([])
 
+/** menu desplegable for mobil */
+const [isMenu, setIsMenu] = React.useState(false) 
 const builderMyOrder=()=>{
 const myOrder = {  
   'id':idRandom(),
@@ -84,6 +87,8 @@ React.useEffect(()=>{
 
   }
 
+
+
  
     return(
         <ShopingCardContext.Provider
@@ -97,6 +102,9 @@ React.useEffect(()=>{
             ordersProduct,
             filterItems,
             searchTitle,
+            isListCategories,
+            isMenu,
+             setIsMenu,
             setfilterCategory, 
             setSearchtitle,
             setOrdersProduct,
@@ -108,7 +116,8 @@ React.useEffect(()=>{
             openDetailCard,
             closeComponentCart,
             openComponentCart,
-            addProductMyOrder
+            addProductMyOrder,
+            setIsListCategories
         }}>
             {children}
         </ShopingCardContext.Provider>
