@@ -3,7 +3,7 @@ import { Home } from '../Home';
 import { MyAccuont } from '../MyAccuont';
 import { MyOrder } from '../MyOrder';
 import { MyOrders } from '../MyOrders';
-import { SingnIn } from '../SingnIn';
+import { SignIn } from '../SignIn';
 import { NotFount } from '../NotFound';
 
 const AppRoutes = ()=>{
@@ -14,7 +14,7 @@ const AppRoutes = ()=>{
      {path:'/my-order/product-cart', element:<MyOrder/>},
      {path:'/my-order/:id', element:<MyOrder/>},
      {path:'/my-orders', element:<MyOrders/>},
-     {path:'/sign-In', element:<SingnIn/>},
+     {path:'/sign-In', element:<SignIn/>},
      {path:'', element:<NotFount/>},
    
    ])

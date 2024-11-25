@@ -31,9 +31,6 @@ import { Link } from 'react-router-dom';
           <Link to={`/my-order/${item.id}`}>  
           <ChevronRightIcon className='size-9 text-slate-300'/>
            </Link>
-         
-        
-      
          <button  className=' absolute right-0 top-0' onClick={()=> removeProduct(item.id)}><XMarkIcon className=" size-5  text-slate-300"/></button>
             </div>})}
            
