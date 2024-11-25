@@ -8,35 +8,33 @@ import { CategoriesItems } from "../itemsCategories/categoriesItems";
 
 
 
+
 const NavbarDesktop=()=>{
     const {
         count,
         openComponentCart,
-        isMenu,
         isListCategories,
         setIsListCategories,
         setSearchtitle,
-
+        setSignOut,
     }= useContext(ShopingCardContext)
-    const screenWidth = window.screen.width; 
+   
+       const handleSignOut=()=>{
+        const stringifiedSignOut = JSON.stringify(true)
+        localStorage.setItem('sign-out',stringifiedSignOut)
+        setSignOut(true)
+       }
     
-    console.log(`Ancho de la pantalla: ${screenWidth}`); 
     
  
- console.log(isMenu)
-    const listPages = [
-        {to:'/', name: 'Alexrivas24@gmail.com'},
-        {to:'/my-orders', name:'My Orders'},
-        {to:'/sign-In', name:'Sign In'},
-       ]
-      
-
-          const renderPages =  listPages.map(categories => 
-        <li key={categories.name}> <NavLink to={categories.to}>{categories.name} </NavLink></li>)
-  
-       
-       
-       
+ 
+          const renderPages =  <ul className="space-x-4 flex place-content-center gap-1">
+             <li> <NavLink to='/'>Alexrivas24@gmail.com</NavLink></li>
+             <li> <NavLink to='/my-orders'>My Orders</NavLink></li>
+             <li onClick={()=>handleSignOut()}> <NavLink to='/sign-In'>Sign In</NavLink></li>
+             <li> <NavLink to='/my-accuont'>account</NavLink></li>
+          </ul>
+          
     return(
         <>
          <nav className=" w-full h-20  flex px-4 bg-slate-800 justify-between items-center fixed top-0 z-20">
@@ -55,9 +53,7 @@ const NavbarDesktop=()=>{
          <input type="text" className=" outline-none w-auto h-10 bg-transparent text-black p-3" placeholder=" search Product" autoComplete='true' />
        </div> 
        </div>
-    <ul className="space-x-4 flex place-content-center gap-1">
      {renderPages}
-    </ul>
    </section>
         
           <div className=" relative"> 

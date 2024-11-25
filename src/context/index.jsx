@@ -13,6 +13,12 @@ const ShopingCardContext= createContext()
     children: PropTypes.node.isRequired,
   }
   const {items}= useItems()
+
+  /** My account**/
+  const [account, setAccount]= React.useState({})
+
+/** sign Out **/
+  const [signOut, setSignOut]= React.useState(false)
   
  /**  search for title  **/
  const [searchTitle, setSearchtitle]= React.useState('')
@@ -104,6 +110,10 @@ React.useEffect(()=>{
             searchTitle,
             isListCategories,
             isMenu,
+            account, 
+            signOut, 
+            setSignOut,
+            setAccount,
              setIsMenu,
             setfilterCategory, 
             setSearchtitle,
