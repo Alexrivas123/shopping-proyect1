@@ -2,6 +2,7 @@ import { useContext} from "react";
 import { ShopingCardContext } from "../../context";
 import {  MagnifyingGlassIcon, ShoppingBagIcon } from '@heroicons/react/24/solid'
 import { BtnMenu } from "../utilis/btnMenu";
+import { NavLink } from "react-router-dom";
 
 const NavbarMobile=()=>{
     const {
@@ -13,9 +14,11 @@ const NavbarMobile=()=>{
        
     return(
         <>
-         <nav className=" w-full  h-auto flex  flex-col px-2  bg-slate-800 justify-between items-center ">
+         <nav className=" w-full  h-auto flex  flex-col p-3 md:p-4 bg-slate-800 justify-around items-center ">
         <section className=" w-full flex items-center justify-between space-x-1">
+          <NavLink to='/'>
         <h2 className=" max-sm:w-20 font-bold text-base   md:text-3xl  md:ml-3  " >Shopping Store</h2>
+        </NavLink>
         <div className=" w-auto h-8 px-1 flex justify-center items-center rounded-md   bg-slate-300" 
         onChange={(event)=>setSearchtitle(event.target.value)}>
          <MagnifyingGlassIcon className="size-4 text-black " />

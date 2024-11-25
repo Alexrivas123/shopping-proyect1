@@ -20,9 +20,8 @@ const Home =()=> {
    return (
    
      <section >
-      {/* {isListCategories} */}
        <div>
-          <h2 className="font-bold text-center mt-8 mb-5 text-lg md:text-2xl"> Exclusive Products </h2>
+          <h2 className="font-bold text-center mt-4 mb-5 text-lg md:text-2xl"> Exclusive Products </h2>
        </div> 
        <div className=" p-2 max-w-screen-lg grid gap-3 place-items-center   grid-cols-2 sm:grid-cols-3 lg:grid-cols-4" >
          {renderView}
