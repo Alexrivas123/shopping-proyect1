@@ -34,7 +34,7 @@ const NavbarDesktop=()=>{
             if(isUserSignOut) {
                  return( <ul className="space-x-4 flex place-content-center gap-1">
             
-             <li onClick={()=>handleSignOut()}> <NavLink to='/sign-In'>Sign out</NavLink></li>
+             <li onClick={()=>handleSignOut()}> <NavLink to='/sign-In'>Sign in</NavLink></li>
            
           </ul>)
           
@@ -42,7 +42,7 @@ const NavbarDesktop=()=>{
                 return(  <ul className="space-x-4 flex place-content-center gap-1">
              <li> <NavLink to='/'>Alexrivas24@gmail.com</NavLink></li>
              <li> <NavLink to='/my-orders'>My Orders</NavLink></li>
-             <li onClick={()=>handleSignOut()}> <NavLink to='/sign-In'>Sign In</NavLink></li>
+             <li onClick={()=>handleSignOut()}> <NavLink to='/sign-In'>Sign out</NavLink></li>
              <li> <NavLink to='/my-accuont'>account</NavLink></li>
           </ul>)
               

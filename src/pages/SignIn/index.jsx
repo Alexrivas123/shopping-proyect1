@@ -1,10 +1,12 @@
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { useContext, useRef, useState } from 'react';
 import { ShopingCardContext } from '../../context';
 
 const SignIn =()=> {
   const {
-      account
+      account,
+      setAccount,
+      setSignOut
   }= useContext(ShopingCardContext)
   const[view, setView ]= useState('user-infor')
   const form = useRef(null)
@@ -22,7 +24,17 @@ const parsedAccount = JSON.parse(accountInLocalStorage)
     email:formData.get('email'),
     password: formData.get('password')
   }
+  const stringifiedAccount = JSON.stringify(data)
+  localStorage.setItem('account', stringifiedAccount)
+  setAccount(data)
+  handleSignIn()
   console.log(data)
+ }
+ const handleSignIn=()=>{
+  const stringifiedSignOut= JSON.stringify(false)
+  localStorage.setItem('sign-out', stringifiedSignOut)
+  setSignOut(false)
+   return <Navigate replace to='/'/>
  }
 
     const renderLogIn =()=>{
@@ -38,6 +50,7 @@ const parsedAccount = JSON.parse(accountInLocalStorage)
       </p>
       <Link to='/'>
       <button className='w-full h-10 mt-4 bg-slate-300 text-center text-black rounded-lg'
+      onClick={()=>handleSignIn()}
        disabled={!hasUserAnAccount}>Log In</button>
       </Link>
       <div className="text-center">
