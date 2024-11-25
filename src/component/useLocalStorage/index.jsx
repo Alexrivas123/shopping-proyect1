@@ -4,8 +4,8 @@
 const initializeLocalStorage =() => {
 const accountInLocalStorage = localStorage.getItem('account')
 const signOutInLocalStorage = localStorage.getItem('sign-Out')
- const parsedAccount = !accountInLocalStorage ? {} : JSON.parse(accountInLocalStorage)
- const parsedSignOut = !signOutInLocalStorage ? false : JSON.parse(signOutInLocalStorage)
+//  const parsedAccount = !accountInLocalStorage ? {} : JSON.parse(accountInLocalStorage)
+//  const parsedSignOut = !signOutInLocalStorage ? false : JSON.parse(signOutInLocalStorage)
 
  if(!accountInLocalStorage ){
     localStorage.setItem('account', JSON.stringify({})) 
