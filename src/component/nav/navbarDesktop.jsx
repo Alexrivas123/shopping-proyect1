@@ -3,11 +3,7 @@ import { NavLink } from "react-router-dom";
 import { ShopingCardContext } from "../../context";
 import { ChevronDownIcon, MagnifyingGlassIcon, ShoppingBagIcon } from '@heroicons/react/24/solid'
 import { CategoriesItems } from "../itemsCategories/categoriesItems";
-
-
-
-
-
+import { InitializeLocalStorage } from "../useLocalStorage";
 
 const NavbarDesktop=()=>{
     const {
@@ -16,20 +12,9 @@ const NavbarDesktop=()=>{
         isListCategories,
         setIsListCategories,
         setSearchtitle,
-        signOut,
-        setSignOut,
     }= useContext(ShopingCardContext)
+    const{isUserSignOut, handleSignOut}= InitializeLocalStorage()
    
-     const signOutInLocalStorage = localStorage.getItem('sign-out')
-     const parsedSignOut = JSON.parse(signOutInLocalStorage)
-     const isUserSignOut = signOut || parsedSignOut
-
-       const handleSignOut=()=>{
-        const stringifiedSignOut = JSON.stringify(true)
-        localStorage.setItem('sign-out',stringifiedSignOut)
-        setSignOut(true)
-       }
-
           const renderView =()=>{ 
             if(isUserSignOut) {
                  return( <ul className="space-x-4 flex place-content-center gap-1">
@@ -42,8 +27,8 @@ const NavbarDesktop=()=>{
                 return(  <ul className="space-x-4 flex place-content-center gap-1">
              <li> <NavLink to='/'>Alexrivas24@gmail.com</NavLink></li>
              <li> <NavLink to='/my-orders'>My Orders</NavLink></li>
+             <li> <NavLink to='/my-accuont'>account</NavLink></li> 
              <li onClick={()=>handleSignOut()}> <NavLink to='/sign-In'>Sign out</NavLink></li>
-             <li> <NavLink to='/my-accuont'>account</NavLink></li>
           </ul>)
               
             }
@@ -64,7 +49,8 @@ const NavbarDesktop=()=>{
        <div className=" w-3/4 flex  px-3 items-center rounded-tr-md rounded-br-md  bg-slate-300" 
         onChange={(event)=>setSearchtitle(event.target.value)}>
          <MagnifyingGlassIcon className="size-6 text-black " />
-         <input type="text" className=" outline-none w-auto h-10 bg-transparent text-black p-3" placeholder=" search Product" autoComplete='true' />
+         <input type="text" className=" outline-none w-auto h-10 bg-transparent text-black p-3" 
+         placeholder=" search Product" autoComplete='true' />
        </div> 
        </div>
      {renderView()}

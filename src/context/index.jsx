@@ -16,9 +16,14 @@ const ShopingCardContext= createContext()
 
   /** My account**/
   const [account, setAccount]= React.useState({})
+  const[view, setView ]= React.useState('user-infor')
 
 /** sign Out **/
   const [signOut, setSignOut]= React.useState(false)
+
+  /** log In  **/
+  const [userInforName, setUserInforName] = React.useState('')
+    const [userInforPassword, setUserInforPassword] = React.useState('')
   
  /**  search for title  **/
  const [searchTitle, setSearchtitle]= React.useState('')
@@ -112,6 +117,12 @@ React.useEffect(()=>{
             isMenu,
             account, 
             signOut, 
+            view, 
+            userInforName, 
+            userInforPassword,   
+            setUserInforName,
+            setUserInforPassword,
+            setView,
             setSignOut,
             setAccount,
              setIsMenu,

@@ -9,7 +9,7 @@ import { NavbarDesktop } from '../../component/nav/navbarDesktop';
 function App() {
   const screenWidth = window.screen.width; 
     const renderView = screenWidth <= 768 ? <NavbarMobile/> : <NavbarDesktop/> 
-  console.log(`Ancho de la pantalla: ${screenWidth}`); 
+  
   
 return (
   <ShopingCardProvider>
