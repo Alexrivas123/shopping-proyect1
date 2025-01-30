@@ -1,5 +1,5 @@
 import { useContext} from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { ShopingCardContext } from "../../context";
 import { ChevronDownIcon, MagnifyingGlassIcon, ShoppingBagIcon } from '@heroicons/react/24/solid'
 import { CategoriesItems } from "../itemsCategories/categoriesItems";
@@ -22,23 +22,22 @@ const NavbarDesktop=()=>{
              <li onClick={()=>handleSignOut()}> <NavLink to='/sign-In'>Sign in</NavLink></li>
            
           </ul>)
-          
-            } else{ 
-                return(  <ul className="space-x-4 flex place-content-center gap-1">
+            } else {
+               return(  <ul className="space-x-4 flex place-content-center gap-1">
              <li> <NavLink to='/'>Alexrivas24@gmail.com</NavLink></li>
              <li> <NavLink to='/my-orders'>My Orders</NavLink></li>
              <li> <NavLink to='/my-accuont'>account</NavLink></li> 
-             <li onClick={()=>handleSignOut()}> <NavLink to='/sign-In'>Sign out</NavLink></li>
+             <li onClick={()=>handleSignOut()}> <NavLink to='/'>Sign out</NavLink></li>
           </ul>)
-              
             }
           }
          
     return(
         <>
          <nav className=" w-full h-20  flex px-4 bg-slate-800 justify-between items-center fixed top-0 z-20">
-        
+        <Link to='/'>
         <h2 className=" w-20 font-bold  text-3xl  mx-3  " >Shopping Store</h2>
+        </Link>
         <section className=" w-3/4 mx-4 flex justify-between items-center">
          <div className=" w-1/2 h-auto mr-4 flex rounded-md ">
         <div className="w-auto h-10  px-1 flex gap-2 justify-center items-center border border-slate-300 rounded-tl-md rounded-bl-md bg-slate-900" 

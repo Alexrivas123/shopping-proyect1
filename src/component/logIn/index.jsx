@@ -5,12 +5,13 @@ import { InitializeLocalStorage } from "../useLocalStorage";
 
 
 const LogIn =()=>{
-    const {setView, 
+    const {
       userInforName, 
-      userInforPassword,   
+      userInforPassword,  
+      // account,
       setUserInforName,
       setUserInforPassword, }= useContext(ShopingCardContext)
-    const{ handleSignIn}= InitializeLocalStorage()
+    const{ handleSignIn, renderPage }= InitializeLocalStorage()
     
    
     const handleinforName =(e)=>{
@@ -20,8 +21,8 @@ const LogIn =()=>{
     const handleinforPassword =(e)=>{
       setUserInforPassword(e.target.value)
     }
-console.log(userInforName)
-   
+     
+     
    return(
          <div className=" space-y-5">
  
@@ -39,18 +40,19 @@ console.log(userInforName)
          type="text" id="password" name="password"  placeholder="*******"/>
        </div>
    
-    <Link to='/'>
+    <Link to={renderPage} >
     <button className='w-full h-10 mt-4 bg-slate-300 text-center text-black rounded-lg'
     onClick={()=>handleSignIn()}
      disabled={!userInforName && !userInforPassword }
      >Log In</button>
-    </Link>
+     </Link>
     <div className="text-center">
       <a className="font-light text-sm underline underline-offset-4" href="/"> Forgot my Password</a>
     </div>
+    <Link to='/sign-Up'>
     <button className='w-full h-10 disabled:bg-transparent disabled:text-white  text-center border  rounded-lg'
-    onClick={()=>setView('creater-user-infor')}
     >Sign Up</button>
+    </Link>
     </div>)
   }
 

@@ -5,6 +5,7 @@ import { MyOrder } from '../MyOrder';
 import { MyOrders } from '../MyOrders';
 import { SignIn } from '../SignIn';
 import { NotFount } from '../NotFound';
+import { SignUp } from '../signUp';
 
 const AppRoutes = ()=>{
     let routes =useRoutes([
@@ -15,6 +16,7 @@ const AppRoutes = ()=>{
      {path:'/my-order/:id', element:<MyOrder/>},
      {path:'/my-orders', element:<MyOrders/>},
      {path:'/sign-In', element:<SignIn/>},
+     {path:'/sign-Up', element:<SignUp/>},
      {path:'', element:<NotFount/>},
    
    ])

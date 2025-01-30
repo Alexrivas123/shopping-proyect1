@@ -1,18 +1,17 @@
 
+import { CreateUser } from '../../component/createUserInfor';
 
-import { LogIn } from '../../component/logIn';
-
-const SignIn =()=> {
+const SignUp =()=> {
   
     return (
       <>
        <div className=" w-80  mt-4 flex flex-col  " >
       <h1 className=" font-medium text-center text-xl my-3 ">Welcome</h1>
-      <LogIn/>
+      <CreateUser/>
       </div>
      </>
    
     )
   }
   
-  export {SignIn};
+  export {SignUp};

@@ -4,7 +4,7 @@ import { ShopingCardContext } from '../../context';
 import { Link} from "react-router-dom";
 import { createAnAccout } from '../utilis/createAnAccount';
 import { InitializeLocalStorage } from '../useLocalStorage';
-const CreateUserInfor = ()=>{
+const CreateUser = ()=>{
     const {setAccount,}= useContext(ShopingCardContext)
     const form = useRef(null)
     const{ handleSignIn, parsedAccount }= InitializeLocalStorage()
@@ -35,4 +35,4 @@ const CreateUserInfor = ()=>{
  
  }
 
- export {CreateUserInfor}
+ export {CreateUser}
